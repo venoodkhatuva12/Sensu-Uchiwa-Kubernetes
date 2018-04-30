@@ -1,10 +1,11 @@
 FROM oraclelinux
 
-MAINTAINER Dixith dixithbura@gmail.com
+MAINTAINER Venoodk venood.khatuva12@gmail.com
 
 # Basic packages
 RUN yum update -y
 RUN rpm -Uvh http://del-mirrors.extreme-ix.org/epel//epel-release-latest-7.noarch.rpm \
+ && yum -y install "Development Tools" \
  && yum -y install erlang passwd sudo git curl vim wget openssl openssh openssh-server openssh-clients jq
 
 # Create user
@@ -27,9 +28,8 @@ RUN cd /opt/sensu/embedded/bin \
  && sensu-install -p vmstats \  
  && sensu-install -p mailer 
 
-    rm -rvf \
+RUN rm -rvf \
       /tmp/* \
-      /var/lib/apt/lists/* \
       /var/tmp/*
 
 ENV PATH ${PATH}:/opt/sensu/bin:/opt/sensu/embedded/bin:/opt/uchiwa/bin
