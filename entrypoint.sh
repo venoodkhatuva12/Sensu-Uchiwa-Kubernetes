@@ -9,7 +9,7 @@ fi
 
 case "$cmd" in
   server|api|client)
-    export RABBITMQ_URL="amqp://${RABBITMQ_DEFAULT_USER}:${RABBITMQ_DEFAULT_PASS}@rabbitmq:5672/%2f${RABBITMQ_DEFAULT_VHOST#'/'}"
+    export RABBITMQ_URL="amqp://${RABBITMQ_DEFAULT_USER}:${RABBITMQ_DEFAULT_PASS}@rabbitmq:5672/%2F${RABBITMQ_DEFAULT_VHOST#'/'}"
     export REDIS_URL="redis://redis:${REDIS_SERVICE_PORT}/0"
     exec "/opt/sensu/bin/sensu-$cmd" -d /etc/sensu/conf.d -e /etc/sensu/extensions
     ;;
