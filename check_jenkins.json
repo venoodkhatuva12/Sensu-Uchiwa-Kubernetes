@@ -1,0 +1,10 @@
+{
+  "check": {
+       	"check-jenkins-heap": {
+       	"command": "sudo /bin/bash /etc/sensu/plugins/check_jstat -p JENKPID",
+       	"interval": 60,
+       	"occurrences": 5,
+          "subscribers": [ "all" ]
+         }
+    }
+}
