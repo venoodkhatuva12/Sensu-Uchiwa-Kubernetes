@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: sensu-server
-          image: dixithkumar/sensu-uchiwa
+          image: venood12/sensu-uchiwa
           args:
           - server
           env:
@@ -38,7 +38,7 @@ spec:
               fieldRef:
                 fieldPath: metadata.namespace
         - name: sensu-api
-          image: dixithkumar/sensu-uchiwa
+          image: venood12/sensu-uchiwa
           args:
           - api
           ports:
@@ -64,7 +64,7 @@ spec:
               fieldRef:
                 fieldPath: metadata.namespace
         - name: sensu-client
-          image: dixithkumar/sensu-uchiwa
+          image: venood12/sensu-uchiwa
           args:
           - client
           ports:
@@ -100,7 +100,7 @@ spec:
           - name: SENSU_CLIENT_SUBSCRIPTIONS
             value: all
         - name: uchiwa
-          image: dixithkumar/sensu-uchiwa
+          image: venood12/sensu-uchiwa
           args:
           - uchiwa
           ports:

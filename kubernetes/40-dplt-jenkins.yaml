@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: jenkins
-          image: dixithkumar/jenkins-local
+          image: venood12/jenkins-sensu-client
           args:
           - client
           ports:

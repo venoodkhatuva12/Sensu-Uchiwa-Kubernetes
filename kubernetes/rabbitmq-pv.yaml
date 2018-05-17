@@ -1,0 +1,18 @@
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: rabbitmq-pv
+  labels:
+    type: local
+spec:
+  capacity:
+    storage: 16Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/data"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: rabbitmq-pvc
+    namespace: default

@@ -1,0 +1,11 @@
+FROM venood12/sensu
+
+MAINTAINER Venood12 vinod.katuwa12@gmail.com
+
+ENV PATH ${PATH}:/opt/sensu/bin:/opt/sensu/embedded/bin:/opt/uchiwa/bin
+
+COPY uchiwa.json /etc/sensu
+
+COPY entrypoint.sh /
+
+ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]

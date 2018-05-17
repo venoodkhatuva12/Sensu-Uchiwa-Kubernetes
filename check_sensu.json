@@ -14,11 +14,11 @@
       "command": "/etc/sensu/plugins/check_load -w 8.00,5.00,2.00 -c 10.00,8.00,3.00",
       "interval": 60,
       "subscribers": [ "ALL" ]
-  },
+  	},
     "process_check": {
       "command": "/etc/sensu/plugins/check_load -w 8.00,5.00,2.00 -c 10.00,8.00,3.00",
       "interval": 60,
       "subscribers": [ "ALL" ]
-            }
-        }
+      }
+  }
 }
